@@ -2,34 +2,46 @@ package br.senai.sp.jandira.model;
 
 import java.util.Scanner;
 
-abstract class Produto{
+abstract class Produto {
 
     Scanner scanner = new Scanner(System.in);
-    private String nome, descricao, atributo;
+    private String nome, descricao, atributo, codigo, fornecedor, categoria;
     private int id = 0, quantidade;
     private double preco;
 
-    public  void cadastrarProduto(){
+    public Produto(String nome, String codigo, int quantidade, double preco, String descricao, String atributo, String fornecedor, String categoria) {
+        this.nome = nome;
+        this.codigo = codigo;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.descricao = descricao;
+        this.atributo = atributo;
+        this.fornecedor = fornecedor;
+        this.categoria = categoria;
+    }
+
+    public void cadastrarProduto() {
+        System.out.println("----- CADASTRAR PRODUTO -----");
         System.out.print("Produto: ");
         this.nome = scanner.nextLine();
+        System.out.print("Código: ");
+        this.codigo = scanner.nextLine();
+        System.out.print("Quantidade: ");
+        this.quantidade = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Preço: ");
+        this.preco = scanner.nextDouble();
+        scanner.nextLine();
         System.out.print("Descrição: ");
         this.descricao = scanner.nextLine();
         System.out.print("Atributo: ");
         this.atributo = scanner.nextLine();
-        System.out.print("Quantidade: ");
-        this.quantidade = scanner.nextInt();
-        System.out.print("Preço: ");
-        this.preco = scanner.nextDouble();
+        System.out.print("Fornecedor: ");
+        this.fornecedor = scanner.nextLine();
+        System.out.print("Categoria: ");
+        this.categoria = scanner.nextLine();
 
-        System.out.println("✓ Cadastro concuido");
-    }
-
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
+        System.out.println("// CADASTRO CONCLUÍDO //");
     }
 
     public String getNome() {
@@ -54,6 +66,30 @@ abstract class Produto{
 
     public void setAtributo(String atributo) {
         this.atributo = atributo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public int getId() {

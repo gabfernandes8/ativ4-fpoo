@@ -24,10 +24,16 @@ create table produtos
     descricao varchar(200),
     atributo varchar(50),
     fornecedor varchar(50),
-    categoria varchar(50)
+    categoria varchar(50),
+    tamanho integer,
+    cor varchar(20),
+    bluetooth boolean,
+    memoria integer,
+    ram integer,
+    nucleo integer
 );
 
-create table compra
+create table venda
 (
 	id integer primary key auto_increment,
     produto_id integer,

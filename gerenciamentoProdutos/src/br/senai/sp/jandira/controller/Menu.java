@@ -1,7 +1,6 @@
 package br.senai.sp.jandira.controller;
 
 import br.senai.sp.jandira.model.Cliente;
-import br.senai.sp.jandira.model.Produto;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -27,6 +26,7 @@ public class Menu {
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
+            ProdutoExternoController produtoController = new ProdutoExternoController();
             Cliente cliente = new Cliente();
             ClienteController clienteController = new ClienteController();
 
@@ -36,7 +36,7 @@ public class Menu {
                 cliente.cadastrarCliente();
                 clienteController.cadastrarClientes(cliente);
             }else if(opcao == 3){
-
+                clienteController.pesquisarCliente(cliente);
             }else if(opcao == 4){
                 System.out.print("Informe o CPF do cliente: ");
                 String cpfPesquisa = scanner.nextLine();
