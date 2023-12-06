@@ -1,6 +1,8 @@
 package br.senai.sp.jandira.controller;
 
 import br.senai.sp.jandira.model.Cliente;
+import br.senai.sp.jandira.model.ProdutoExterno;
+import br.senai.sp.jandira.model.ProdutoInterno;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -12,41 +14,43 @@ public class Menu {
 
         while (continuar){
             System.out.println("----- Gerenciamento de Produtos em estoque -----");
-            System.out.println(" [1- Cadastrar produto]");
-            System.out.println(" [2- Cadastrar cliente]");
-            System.out.println(" [3- Pesquisar produto]");
-            System.out.println(" [4- Pesquisar Cliente]");
+            System.out.println(" [1- Cadastrar produto interno]");
+            System.out.println(" [2- Cadastrar produto externo]");
+            System.out.println(" [3- Cadastrar cliente]");
+            System.out.println(" [4- Pesquisar produto interno]");
+            System.out.println(" [5- Pesquisar produto externo]");
+            System.out.println(" [6- Pesquisar Cliente]");
             System.out.println("-----------------------------");
             System.out.println(" Outros:");
-            System.out.println(" [5- Deletar produto]");
-            System.out.println(" [6- Deletar Cliente]");
-            System.out.println(" [7- Sair]");
+            System.out.println(" [7- Deletar produto]");
+            System.out.println(" [8- Deletar Cliente]");
+            System.out.println(" [9- Sair]");
 
             Scanner scanner = new Scanner(System.in);
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
-            ProdutoExternoController produtoController = new ProdutoExternoController();
+            ProdutoExternoController produtoExternoController = new ProdutoExternoController();
+            ProdutoInternoController produtoInternoController = new ProdutoInternoController();
+            ProdutoExterno produtoExterno = new ProdutoExterno();
+            ProdutoInterno produtoInterno = new ProdutoInterno();
             Cliente cliente = new Cliente();
             ClienteController clienteController = new ClienteController();
 
             if(opcao == 1){
-                produto.cadastrarProduto();
+                produtoInternoController.cadastrarProdutos(produtoInterno);
             }else if(opcao == 2) {
-                cliente.cadastrarCliente();
-                clienteController.cadastrarClientes(cliente);
+                produtoExternoController.cadastrarProdutos(produtoExterno);
             }else if(opcao == 3){
-                clienteController.pesquisarCliente(cliente);
+                clienteController.cadastrarClientes(cliente);
             }else if(opcao == 4){
-                System.out.print("Informe o CPF do cliente: ");
-                String cpfPesquisa = scanner.nextLine();
-                clienteController.pesquisarCliente(cpfPesquisa);
+                produtoInternoController.pesquisarProdutos(produtoInterno.getCodigo());
             }else if(opcao == 5){
-                System.out.print("Informe o CPF do cliente:");
-                String cpfDeletar = scanner.nextLine();
-                clienteController.deletarCliente(cpfDeletar);
+                produtoExternoController.pesquisarProdutos(produtoExterno.getCodigo());
             }else if(opcao == 6){
-                continuar = false;
+                clienteController.pesquisarCliente(cliente.getCpf());
+            } else if {
+
             }
         }
     }

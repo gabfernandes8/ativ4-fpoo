@@ -12,9 +12,9 @@ public class ProdutoInternoController {
 
     Conexao conexao = new Conexao();
     Connection connection = conexao.getConnection();
-    public void pesquisarProdutos(Integer id) throws SQLException {
+    public void pesquisarProdutos(String codigo) throws SQLException {
         Statement statement = connection.createStatement();
-        String queryPesquisa = "select * from clientes where cpf='"+id+"'";
+        String queryPesquisa = "select * from produtos where codigo='"+codigo+"'";
     }
 
     public void cadastrarProdutos(ProdutoInterno produtoInterno) throws SQLException {
