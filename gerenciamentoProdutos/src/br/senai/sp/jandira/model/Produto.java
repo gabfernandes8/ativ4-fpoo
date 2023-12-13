@@ -9,17 +9,6 @@ abstract class Produto {
     private int id = 0, quantidade;
     private double preco;
 
-    public Produto(String nome, String codigo, int quantidade, double preco, String descricao, String atributo, String fornecedor, String categoria) {
-        this.nome = nome;
-        this.codigo = codigo;
-        this.quantidade = quantidade;
-        this.preco = preco;
-        this.descricao = descricao;
-        this.atributo = atributo;
-        this.fornecedor = fornecedor;
-        this.categoria = categoria;
-    }
-
     public void cadastrarProduto() {
         System.out.println("----- CADASTRAR PRODUTO -----");
         System.out.print("Produto: ");

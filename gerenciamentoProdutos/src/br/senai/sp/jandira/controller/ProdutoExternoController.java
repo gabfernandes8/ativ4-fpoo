@@ -27,4 +27,9 @@ public class ProdutoExternoController {
 
 
     }
+
+    public void deletarProdutos(String codigo) throws SQLException{
+        Statement statement = connection.createStatement();
+        String queryDeletar = "delete * from produtos where codigo='"+codigo+"'";
+    }
 }

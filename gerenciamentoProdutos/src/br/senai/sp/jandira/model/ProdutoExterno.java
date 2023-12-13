@@ -6,11 +6,10 @@ public class ProdutoExterno extends Produto{
     String cor;
     Boolean bluetooth;
 
-    public ProdutoExterno(int id, int quantidade, double preco, String fornecedor, String nome){
-        super(quantidade, preco, fornecedor, nome);
+    public ProdutoExterno() {
         this.tamanho = 0;
-        this.bluetooth = true;
         this.cor = "Preto";
+        this.bluetooth = false;
     }
 
     public int getTamanho() {

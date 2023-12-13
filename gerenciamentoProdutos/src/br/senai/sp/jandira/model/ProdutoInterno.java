@@ -4,8 +4,7 @@ public class ProdutoInterno extends Produto {
 
     int ram, memoria, nucleo;
 
-    public ProdutoInterno(String nome, String codigo, int quantidade, double preco, String descricao, String atributo, String fornecedor, String categoria) {
-        super(nome, codigo, quantidade, preco, descricao, atributo, fornecedor, categoria);
+    public ProdutoInterno() {
         this.ram = 0;
         this.memoria = 0;
         this.nucleo = 0;
